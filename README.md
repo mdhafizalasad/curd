@@ -31,5 +31,5 @@ The project also includes a responsive frontend built with **React**, which inte
 
 ### Deployment:
 - Hosted on **Vercel**
-- - [Live Link](https://curd242.netlify.app) 
+- [Live Link](https://curd242.netlify.app) 
 
