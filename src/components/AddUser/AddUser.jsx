@@ -1,5 +1,6 @@
 import { data } from "autoprefixer";
 import React from "react";
+import background from "../../assets/images/background.jpg";
 
 const AddUser = () => {
   const handleAddUser = (event) => {
@@ -30,44 +31,47 @@ const AddUser = () => {
   };
 
   return (
-    <div>
-        <h1 className="text-3xl my-5 text-center">Add New User</h1>
-          {/*====== add user form ======*/}
-      <div className="flex justify-center items-center mt-10">
-        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-          <form onSubmit={handleAddUser} className="card-body">
+    <div
+      className="min-h-screen flex justify-center items-center"
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="card bg-white bg-opacity-80 backdrop-blur-md w-full max-w-sm shadow-2xl">
+        <h1 className="text-3xl font-bold text-center mt-5">Add New User</h1>
+        <form onSubmit={handleAddUser} className="card-body">
+          <input
+            name="name"
+            type="text"
+            placeholder="Enter your name"
+            className="input input-bordered mb-3"
+            required
+          />
+          <input
+            name="email"
+            type="email"
+            placeholder="Enter your valid email"
+            className="input input-bordered mb-3"
+            required
+          />
+          <input
+            name="image"
+            type="text"
+            placeholder="Enter your photo URL"
+            className="input input-bordered mb-3"
+            required
+          />
+          <div className="form-control mt-6">
             <input
-              name="name"
-              type="text"
-              placeholder="Enter your name"
-              className="input input-bordered mb-3"
-              required
+              type="submit"
+              value="Add User"
+              className="btn btn-primary"
             />
-
-            <input
-              name="email"
-              type="email"
-              placeholder="Enter your valid email"
-              className="input input-bordered mb-3"
-              required
-            />
-            <input
-              name="image"
-              type="text"
-              placeholder="Enter your photo url"
-              className="input input-bordered mb-3"
-              required
-            />
-
-            <div className="form-control mt-6">
-              <input
-                type="Submit"
-                value="Add User"
-                className="btn btn-primary"
-              />
-            </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
   );
